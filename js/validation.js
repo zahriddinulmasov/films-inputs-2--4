@@ -1,8 +1,11 @@
 "use strict";
 
 // Select all elements from HTML:
+let closed = document.querySelector(".close");
+let coutionClose = document.querySelector(".coution");
 let elMoviesWrapper = document.querySelector(".movie__wrapper");
 let elForm = document.querySelector(".main__form");
+let elInputNameFilm = document.querySelector(".form__name-film");
 let elInputYear = document.querySelector(".form__year");
 let elInputRating = document.querySelector(".form__rating");
 let elInputCategory = document.querySelector(".form__categories");
@@ -86,6 +89,7 @@ renderMovies(normolizedMovies, elMoviesWrapper);
 elForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
 
+  let InputNameFilm = elInputNameFilm.value.trim();
   let inputYear = elInputYear.value.trim();
   let inputRating = elInputRating.value.trim();
   let inputCategory = elInputCategory.value.trim();
@@ -95,8 +99,11 @@ elForm.addEventListener("submit", function (evt) {
     let isTrue =
       inputCategory == "all" ? true : item.categories.includes(inputCategory);
 
-    let validation =
-      item.year >= inputYear && item.rating >= inputRating && isTrue;
+      let nameFilm = InputNameFilm == item.title ? true : item.title.includes(InputNameFilm);
+
+      console.log(nameFilm);
+
+    let validation = nameFilm && item.year >= inputYear && item.rating >= inputRating && isTrue;
 
     return validation;
   });
@@ -124,11 +131,20 @@ elForm.addEventListener("submit", function (evt) {
   }
 
   if (inputSorting == "a-z") {
-    filteredArray.sort();
+    filteredArray.sort((a, b) => {
+      return a === b ? 0 : a.title < b.title ? -1 : 1;
+    });
   }
-  if (inputSorting == "a-z") {
-    filteredArray.reverse();
+  if (inputSorting == "z-a") {
+    filteredArray.sort((a, b) => {
+      return a === b ? 0 : a.title < b.title ? 1 : -1;
+    });
   }
 
   renderMovies(filteredArray, elMoviesWrapper);
+});
+
+// Coution Close:
+closed.addEventListener("click", () => {
+  coutionClose.style.display = "none";
 });
