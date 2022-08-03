@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Films</title>
+  </head>
+  <body>
+
+    <section class="main">
+      <div class="container">
+        <div class="main__wrapper">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="fs-1 fw-bolder text-black text-center">Movies catalog</h1>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-9">
+              <div class="main__top">
+                <h4 class="p-3 mb-2 bg-info text-dark rounded-3 bg-opacity-25">Search result: <span class="result">39</span></h3>
+
+                <p class="p-3 mb-2 fs-5 bg-danger text-dark rounded-3 bg-opacity-25">
+                  Use the form on the right to search for a movie
+                </p>
+              </div>
+
+              <div class="row movie__wrapper d-flex flex-column flex-lg-row">
+              </div>
+
+            </div>
+            <div class="col-3">
+              <form class="main__form mb-4" method="post" action="https://echo.htmlacademy.ru/courses">
+                <input class="form-control mb-3 form__year" name="year" type="number" min="1911" max="2100" placeholder="Year" >
+
+                <input class="form-control form__rating mb-3" name="rating" step="0.1" type="number" placeholder="rating">
+
+                <select class="form-select form__categories mb-3" name="categories">
+                  <option selected value="all">All</option>
+                </select>
+
+                <select class="form-select form__sorting mb-3" name="sorting">
+                  <option value="rating_high-low">Rating (high to low)</option>
+                  <option value="rating_low-high">Rating (low to high)</option>
+                  <option value="year_high-low">Year (high to low)</option>
+                  <option value="year_low-high">Year (low to high)</option>
+                  <option value="a-z">A-Z</option>
+                  <option value="z-a">Z-A</option>
+                </select>
+
+                <button class="btn btn-primary w-100" type="submit">Search</button>
+              </form>
+
+              <div class="main__bookmarks">
+                <h2 class="fs-3 fw-bolder text-black">Bookmarked movies</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <template class="movies__card" id="movie_card">
+      <div class="card m-2 px-0" style="width: 29rem;">
+        <img src="./images/mqdefault.jpg" class="card-img-top movie__img"  alt="photo-father">
+
+        <div class="card-body">
+          <h5 class="card-title text-black fw-bolder movie__title">Card title</h5>
+
+          <div class="mb-3 d-flex flex-row align-items-center">
+            <img src="./images/calendar.svg" alt="photo_calendar" width="20" height="20">
+            <p class="card-text ms-2 fw-bolder text-black movie__year">1994</p>
+          </div>
+
+          <div class="mb-3 d-flex flex-row align-items-center">
+            <img src="./images/star.svg" alt="photo_star" width="20" height="20">
+            <p class="card-text ms-3 text-black fw-bolder movie__rating">5.1</p>
+          </div>
+
+          <div>
+            <p class="movie__categories">Drama</p>
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <a href="#" target="_blank" class="btn btn-outline-primary movie__url">Watch trailer</a>
+            <button class="btn btn-outline-info">More info</button>
+            <button class="btn btn-outline-success">Bookmark</button>
+          </div>
+
+        </div>
+      </div>
+    </template>
+
+
+
+    <script src="./bootstrap/bootstrap.bundle.min.js"></script>
+
+    <script src="./js/movies.js"></script>
+    <script src="./js/validation.js"></script>
+  </body>
+</html>
