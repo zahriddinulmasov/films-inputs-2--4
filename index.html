@@ -19,8 +19,35 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-9">
+          <div class="">
+            <div class="p-0">
+              <div class="w-100">
+                <form class="main__form px-2 d-flex justify-content-between" style="margin-bottom: 10px;" method="post" action="https://echo.htmlacademy.ru/courses">
+                  <input class="form-control me-1 form__name-film" type="text" name="nameFilm" placeholder="Search" autocomplete="off">
+
+                  <input class="form-control me-1 form__year" name="year" type="number" min="1911" max="2100" placeholder="Year" >
+
+                  <input class="form-control me-1 form__rating" name="rating" step="0.1" type="number" placeholder="Rating">
+
+                  <select class="form-select me-1 form__categories" name="categories">
+                    <option selected value="all">All</option>
+                  </select>
+
+                  <select class="form-select me-1 form__sorting" name="sorting">
+                    <option value="rating_high-low">Rating (high to low)</option>
+                    <option value="rating_low-high">Rating (low to high)</option>
+                    <option value="year_high-low">Year (high to low)</option>
+                    <option value="year_low-high">Year (low to high)</option>
+                    <option value="a-z">A-Z</option>
+                    <option value="z-a">Z-A</option>
+                  </select>
+
+                  <button class="btn btn-primary w-100" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+
+            <div class="">
               <div class="main__top px-2">
                 <p class="p-3 mb-2 bg-info text-dark rounded-3 bg-opacity-25">Search result: <span class="result">39</span></p>
 
@@ -33,51 +60,43 @@
                   </div>
               </div>
 
-              <div class="row movie__wrapper d-flex flex-column flex-lg-row" style="padding: 0 15px;">
+              <div class="row movie__wrapper d-flex justify-content-between" style="padding: 0 15px;">
               </div>
             </div>
 
-            <div class="col-3 position-relative">
-              <div class="position-sticky w-100" style="top: 30px;">
-                <form class="main__form mb-4" method="post" action="https://echo.htmlacademy.ru/courses">
-                  <input class="form-control mb-3 form__name-film" type="text" name="nameFilm" placeholder="Search" autocomplete="off">
-
-                  <input class="form-control mb-3 form__year" name="year" type="number" min="1911" max="2100" placeholder="Year" >
-
-                  <input class="form-control form__rating mb-3" name="rating" step="0.1" type="number" placeholder="Rating">
-
-                  <select class="form-select form__categories mb-3" name="categories">
-                    <option selected value="all">All</option>
-                  </select>
-
-                  <select class="form-select form__sorting mb-3" name="sorting">
-                    <option value="rating_high-low">Rating (high to low)</option>
-                    <option value="rating_low-high">Rating (low to high)</option>
-                    <option value="year_high-low">Year (high to low)</option>
-                    <option value="year_low-high">Year (low to high)</option>
-                    <option value="a-z">A-Z</option>
-                    <option value="z-a">Z-A</option>
-                  </select>
-
-                  <button class="btn btn-primary w-100" type="submit">Search</button>
-                </form>
-
-                <div class="main__bookmarks">
-                  <h2 class="fs-3 fw-bolder text-black">Bookmarked movies</h2>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title movie__title text-danger fw-semibold" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body movie__about text-warning">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+  ...
+</div>
     </section>
 
     <template class="movies__card" id="movie_card">
-      <div class="card m-2 px-0" style="width: 29rem;">
+      <div class="card m-2 px-0 w-50%" style="width: 25.8rem;">
         <img src="./images/mqdefault.jpg" class="card-img-top movie__img"  alt="photo-father">
 
         <div class="card-body">
-          <h5 class="card-title text-black fw-bolder movie__title">Card title</h5>
+          <h5 class="card-title text-black fw-bolder movie__title" style="
+          min-height: 50px;">Card title</h5>
 
           <div class="mb-3 d-flex flex-row align-items-center">
             <img src="./images/calendar.svg" alt="photo_calendar" width="20" height="20">
@@ -91,14 +110,16 @@
 
           <div>
             <p class="movie__categories fw-bolder text-dark">Drama</p>
-          </div>
 
-          <div class="d-flex justify-content-between">
-            <a href="#" target="_blank" class="btn btn-outline-primary movie__url">Watch trailer</a>
-            <button class="btn btn-outline-info">More info</button>
-            <button class="btn btn-outline-success">Bookmark</button>
-          </div>
+            <div class="d-flex justify-content-between">
+              <a href="#" target="_blank" class="btn btn-outline-primary movie__url">Watch trailer</a>
+              <button type="button" class="btn btn-outline-info movie__about" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                More info
+              </button>
+              <button class="btn btn-outline-success">Bookmark</button>
+            </div>
 
+          </div>
         </div>
       </div>
     </template>

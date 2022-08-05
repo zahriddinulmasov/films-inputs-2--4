@@ -10,6 +10,8 @@ let elInputYear = document.querySelector(".form__year");
 let elInputRating = document.querySelector(".form__rating");
 let elInputCategory = document.querySelector(".form__categories");
 let elInputSorting = document.querySelector(".form__sorting");
+let elMovieTitle = document.querySelector(".movie__title");
+let elMovieAbout = document.querySelector(".movie__about");
 let elRenderResult = document.querySelector(".result");
 let elMoviesTemplate = document.querySelector(".movies__card").content;
 
@@ -18,7 +20,10 @@ let moviesArray = movies.slice(0, 50);
 // Normalize:
 let normolizedMovies = moviesArray.map(function (item) {
   return {
+    id: item.imdb_id,
+    about: item.summary,
     title: item.Title.toString(),
+    fullTitle: item.fulltitle.toString(),
     categories: item.Categories.split("|"),
     info: item.summary,
     img: `https://i.ytimg.com/vi/${item.ytid}/mqdefault.jpg`,
@@ -26,6 +31,7 @@ let normolizedMovies = moviesArray.map(function (item) {
     rating: item.imdb_rating,
     year: item.movie_year,
   };
+
 });
 
 // Categories:
@@ -78,6 +84,7 @@ function renderMovies(array, wrapper) {
     moviesTemplate.querySelector(".movie__categories").textContent =
       item.categories;
     moviesTemplate.querySelector(".movie__url").href = item.videoUrl;
+    moviesTemplate.querySelector(".movie__about").dataset.movieId = item.id;
 
     fragment.appendChild(moviesTemplate);
   }
@@ -99,11 +106,16 @@ elForm.addEventListener("submit", function (evt) {
     let isTrue =
       inputCategory == "all" ? true : item.categories.includes(inputCategory);
 
-      let nameFilm = InputNameFilm == item.title ? true : item.title.includes(InputNameFilm);
+    let nameFilm =
+      InputNameFilm == item.title ? true : item.title.includes(InputNameFilm);
 
-      console.log(nameFilm);
+    console.log(nameFilm);
 
-    let validation = nameFilm && item.year >= inputYear && item.rating >= inputRating && isTrue;
+    let validation =
+      item.year >= inputYear &&
+      item.rating >= inputRating &&
+      isTrue &&
+      item.title.search(InputNameFilm) != -1;
 
     return validation;
   });
@@ -147,4 +159,17 @@ elForm.addEventListener("submit", function (evt) {
 // Coution Close:
 closed.addEventListener("click", () => {
   coutionClose.style.display = "none";
+});
+
+elMoviesWrapper.addEventListener("click", function (evt) {
+  evt.preventDefault();
+
+  const currentId = evt.target.dataset.movieId;
+
+  const foundMovie = normolizedMovies.find(function (item) {
+    return item.id == currentId;
+  });
+
+  elMovieTitle.textContent = foundMovie.fullTitle;
+  elMovieAbout.textContent = foundMovie.about;
 });

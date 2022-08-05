@@ -26,32 +26,6 @@ var movies = [
     "ytid": "jwD04NsnLLg"
   },
   {
-    "Title": "Mickey's Magical Christmas: Snowed in at the House of Mouse",
-    "fulltitle": "Mickey's Magical Christmas: Snowed in at the House of Mouse (2001)",
-    "movie_year": 2001,
-    "Categories": "Adventure|Animation|Comedy|Family|Fantasy",
-    "summary": "After everyone is snowed in at the House of Mouse, Mickey suggests they throw their own Christmas party. Everyone is happy, except for Donald who just isn't in to the Christmas spirit. So Mickey shows a series of cartoons that show just what Christmas is all about. It features a star studded cast of Disney characters from everyone's favorite animated Disney movies.",
-    "ImageURL": "https://hydramovies.com/wp-content/uploads/2018/04/Mickeys-Magical-Christmas-Snowed-in-at-the-House-of-Mouse-Movie-Poster.jpg",
-    "imdb_id": "tt0300195",
-    "imdb_rating": 6.8,
-    "runtime": 65,
-    "language": "English",
-    "ytid": "uCKwHHftrU4"
-  },
-  {
-    "Title": "Mickey's House of Villains",
-    "fulltitle": "Mickey's House of Villains (2001)",
-    "movie_year": 2001,
-    "Categories": "Animation|Comedy|Family|Fantasy|Horror",
-    "summary": "The villains from the popular animated Disney films are gathered at the House of Mouse with plans to take over. Soon, the villains take over the house and kick out Mickey, Donald and Goofy. It's all up to Mickey and his friends to overthrow evil and return the House of Mouse to normal--or as close to normal as it get's.",
-    "ImageURL": "https://hydramovies.com/wp-content/uploads/2018/04/Mickeys-House-of-Villains-Movie-Poster.jpg",
-    "imdb_id": "tt0329374",
-    "imdb_rating": 6.6,
-    "runtime": 0,
-    "language": "English",
-    "ytid": "JA03ciYt-Ek"
-  },
-  {
     "Title": "And Then I Go",
     "fulltitle": "And Then I Go (2017)",
     "movie_year": 2017,
@@ -180,19 +154,6 @@ var movies = [
     "runtime": 0,
     "language": "English",
     "ytid": "eMVw1pHVMAw"
-  },
-  {
-    "Title": "Silent Night",
-    "fulltitle": "Silent Night (2017)",
-    "movie_year": 2017,
-    "Categories": "Comedy|Drama",
-    "summary": "Adam unexpectedly visits his family house at Christmas after a few years of working abroad. No family member knows about his secret plans and the real reasons of his visit.",
-    "ImageURL": "https://hydramovies.com/wp-content/uploads/2018/04/Silent-Night-Movie-Poster.jpg",
-    "imdb_id": "tt7133554",
-    "imdb_rating": 7.5,
-    "runtime": 100,
-    "language": "English",
-    "ytid": "cA6BUYVkQoE"
   },
   {
     "Title": "Suicide Squad: Hell to Pay",
