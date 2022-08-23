@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="https://www.iconninja.com/files/792/263/681/go-movie-play-cinema-pokemon-game-film-icon.svg" type="image/x-icon">
+	<link rel="stylesheet" href="./css/bootstrap.css">
+	<link rel="stylesheet" href="./css/main.css">
+	<title>Pokemon</title>
+</head>
+<body class="bg-warning">
+	
+	<a href="./index.html"><img class="logo container align-items-center d-flex" src="./images/pokemon_logo.png"></a>
+	<form id="form" class="mt-5 d-flex  flex-column  flex-lg-row justify-content-center text-center mx-auto">
+		<input type="text" class="form-control name" aria-label="Sizing example input" placeholder="name" aria-describedby="inputGroup-sizing-sm">
+		<input type="number" class="form-control weight" placeholder="weight" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+		<input type="number" class="form-control height" placeholder="height" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+		<select class="form-select type" aria-label="Default select example">
+			<option value="all" selected>All</option>
+		</select>
+		<select class="form-select sort overflow-hidden" aria-label="Default select example">
+			<option value="nothing" selected>Without sort</option>
+			<option value="weighthl">Weight(high-to-low)</option>
+			<option value="weightlh">Weight(low-to-high)</option>
+			<option value="heighthl">Height(high-to-low)</option>
+			<option value="heightlh">Weight(low-to-high)</option>
+			<option value="az">Aa-Zz</option>
+			<option value="za">Zz-Aa</option>
+		</select>
+		<button type="submit" class="btn btn-danger">Search</button>
+	</form>
+	<button id="showLiked" class="container d-flex justify-content-center align-items-center text-center w-auto mt-5 btn btn-danger">Show liked cards</button>
+	<p class="container text-success fs-3 text-center mt-5">Result: <span class="result"></span></p>
+	<div class="container d-flex flex-column justify-content-center align-items-center">
+		<ul id="list" class="row list-unstyled d-flex justify-content-center w-100 col-12 mt-3">
+		</ul>
+		<ul id="list2" class="row list-unstyled d-flex justify-content-center w-100 col-12 mt-3">
+		</ul>
+	</div>
+	<script src="./js/main.js"></script>
+	<script src="./js/bootstrap.js"></script>
+</body>
+</html>
